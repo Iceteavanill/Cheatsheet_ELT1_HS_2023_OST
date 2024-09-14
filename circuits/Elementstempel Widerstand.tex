@@ -1,0 +1,9 @@
+% LTeX: enabled=false
+\begin{circuitikz}
+    \tikzstyle{every node}=[font=\LARGE]
+    \draw (0,0) to[R, l={ \Large R}] (2,0);
+    \draw (0,0) to[short, -o] (-0.25,0) ;
+    \draw (2,0) to[short, -o] (2.25,0) ;
+    \node [font=\LARGE] at (-0.25,0.5) {m};
+    \node [font=\LARGE] at (2.25,0.5) {n};
+\end{circuitikz}

@@ -1,0 +1,25 @@
+% LTeX: enabled=false
+\begin{circuitikz}
+    \draw (1,2) to[V,v,*-*,name=v1, bipole/is voltage=false] (1,0);
+    \draw (0.5,0) -- (1.5,0);
+    \draw (0.5,2) -- (1.5,2);
+    \draw[-Latex,blue] (v1-Vfrom) to[bend left=55, blue]  node[midway, right] {$U_q$}(v1-Vto);
+
+    \draw[-Latex,orange] (2.5,1) -- node[midway, above] {ausschalten} (3.5,1);
+
+    \draw (5,2) to[short,*-*] (5,0);
+    \draw (4.5,0) -- (5.5,0);
+    \draw (4.5,2) -- (5.5,2);
+\end{circuitikz}
+\begin{circuitikz}
+    \draw (1,0) to[I,i=$I_q$,*-*,name=i1, bipole/is voltage=false] (1,2);
+    \draw (0.5,0) -- (1.5,0);
+    \draw (0.5,2) -- (1.5,2);
+    \iarr{i1};
+    \draw[-Latex,orange] (2.5,1) -- node[midway, above] {ausschalten} (3.5,1);
+
+    \draw (5,0.5) to[short,-*] (5,0);
+    \draw (5,1.5) to[short,-*](5,2);
+    \draw (4.5,0) -- (5.5,0);
+    \draw (4.5,2) -- (5.5,2);
+\end{circuitikz}

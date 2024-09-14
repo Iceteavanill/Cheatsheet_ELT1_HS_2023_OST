@@ -1,0 +1,130 @@
+\documentclass[fontsize=8pt, a4paper, fleqn, landscape, DIV=calc]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+
+\usepackage{hyperref}%links in the pdf
+\hypersetup{pdfborder = {0 0 0}}
+
+\usepackage{multicol}%layout
+\usepackage{geometry}%layout
+\usepackage{tcolorbox}%section bars,...
+\usepackage{fancyhdr}%header
+\usepackage{lastpage}%obvious
+\usepackage{dirtytalk}% ""
+\usepackage{pdfpages}%Anhang
+\usepackage{siunitx}%obvious
+\geometry{margin=1cm}
+\parindent 0pt
+\pagestyle{fancy}
+\newlength{\breite}
+\setlength{\breite}{0.5pt}
+\setlength{\columnseprule}{\breite}
+\usepackage{qrcode}%QR code im Titel
+
+\usepackage[table]{xcolor}
+
+%Math stuff
+\usepackage{mathtools}
+\allowdisplaybreaks %allow display breaks in align
+
+\usepackage{enumitem}%Itemise 
+
+
+%tikzstuff
+\usepackage{tikz,pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{positioning}
+\usetikzlibrary{arrows.meta}
+\usepackage[european resistors,american voltages,american currents]{circuitikz}
+\ctikzset{bipoles/length=.8cm}%smaller circuit symbols
+\ctikzset{voltage/bump b=1.5}%more distance for the voltage arrow 
+\ctikzset{bipoles/vsourceam/inner plus={\tiny $+$}}%setting + a bit smaller
+\ctikzset{bipoles/vsourceam/inner minus={\tiny $-$}}%setting - a bit smaller
+\ctikzset{bipole voltage style/.style={color=blue}, bipole current style/.style={color=red}}%setting colors for I and V
+\newcommand{\iarr}[1]{% name
+    \node [currarrow, color=red, anchor=center,
+    rotate=\ctikzgetdirection{#1-Iarrow}] at (#1-Ipos) {}
+}
+\newcommand{\varr}[1]{% name
+    \draw [color=blue] (#1-Vfrom) .. controls (#1-Vlab)
+    .. (#1-Vto) node [currarrow,
+    sloped, anchor=tip, allow upside down,pos=1]{};
+}
+\ctikzset{!vi/.style={no v symbols, no i symbols}}
+
+
+\newcommand{\todo}[1][todo]{% Todo marker
+   \begin{tcolorbox}[colback=orange, beforeafter skip=2pt, boxrule=0pt, arc=2pt, left=0pt, right=0pt, top=0pt, bottom=0pt]%
+       {#1}%
+   \end{tcolorbox}%
+} 
+
+%svg setup
+\usepackage{svg}
+\svgpath{{svg/}}
+
+\usepackage{wrapfig}
+
+% color for  Titel / sub Titel
+\definecolor{sectionbarcolor}{RGB}{148,0,255}
+\definecolor{subsectionbarcolor}{RGB}{220,173,255}
+\definecolor{sectiontextcolor}{RGB}{255,255,255}
+\definecolor{subsectiontextcolor}{RGB}{0,0,0}
+
+%section color box
+\setkomafont{section}{\mysection}
+\newcommand{\mysection}[1]{%
+    \Large%
+    \begin{tcolorbox}[colback=sectionbarcolor, coltext=sectiontextcolor, beforeafter skip=2pt, boxrule=0pt, arc=2pt, left=0pt, right=0pt, top=0pt, bottom=0pt]%
+        {#1}%
+    \end{tcolorbox}%
+}
+
+%subsection color box
+\setkomafont{subsection}{\mysubsection}
+\newcommand{\mysubsection}[1]{%
+    \Large%
+    \begin{tcolorbox}[colback=subsectionbarcolor, coltext=subsectiontextcolor, beforeafter skip=2pt, boxrule=0pt, arc=2pt, left=0pt, right=0pt, top=0pt, bottom=0pt]%
+        {#1}%
+    \end{tcolorbox}%
+}
+
+%Information for maketitle
+\title{\vspace{-1cm}Elektrotechnik 1}
+\subtitle{HS 2023, Prof. Dr. Hans-Dieter Lang}
+\author{Fabian Steiner, \today}
+\date{{\small V1.0.0}}
+
+%Header & footer
+\fancyhf{}
+\setlength{\footskip}{0.5cm}
+\fancyfoot[L]{\thepage{} / \pageref{LastPage}}
+\fancyfoot[R]{ELT 1}
+\renewcommand{\footrulewidth}{0pt}
+\renewcommand{\headrulewidth}{0pt}
+
+\begin{document}
+	\begin{multicols*}{2}
+        \begin{minipage}{0.75\columnwidth}
+		      \maketitle
+        \end{minipage}
+        \begin{minipage}{0.2\columnwidth}
+            \begin{center}
+                \quad
+                \qrcode[height=1.5cm]{https://github.com/Iceteavanill/Cheatsheet_ELT1_HS_2023_OST}
+                \qquad    
+            \end{center}
+        \end{minipage}
+        
+        \thispagestyle{fancy}%Pagenumber for first page
+        \raggedcolumns
+        \input{sections/01_Grundlagen}
+        \input{sections/02_Grundlagen_Elektrotechnik}
+        \input{sections/03_Gleichstromnetzwerke}
+        \input{sections/04_Nichtlineare_Netzwerke}
+        \input{sections/05_Systematische_Netzwerkanalyse}
+        
+	\end{multicols*}
+ 
+    \includepdf{formelblatt_ELT1_2023_v1_1_page.pdf}%anhang
+\end{document}

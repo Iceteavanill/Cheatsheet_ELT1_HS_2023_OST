@@ -1,0 +1,15 @@
+% LTeX: enabled=false
+\begin{circuitikz}[european]
+    \draw (0,0) to[isource, *-*, i=$I_q$, bipole/is voltage=false, !vi, name=I1] (0,2);
+    \iarr{I1};
+    \node at(0,-0.5) {Typ 1};
+    \draw (2,0) to[ioosource, *-*, i=$I_q$, bipole/is voltage=false, !vi, name=I2] (2,2);
+    \iarr{I2};
+    \node at(2,-0.5) {Typ 2};
+\end{circuitikz}
+\begin{circuitikz}
+    \node at(0,-0.5) {};
+    \draw (1,0) to[isource, *-*, i=$I_q$, bipole/is voltage=false, !vi, name=I1] (1,2);
+    \iarr{I1};
+    \node at(1,-0.5) {Typ 3};
+\end{circuitikz}

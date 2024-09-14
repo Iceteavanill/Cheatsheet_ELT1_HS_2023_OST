@@ -1,0 +1,23 @@
+% LTeX: enabled=false
+\resizebox{\columnwidth}{!}{%
+\begin{circuitikz}
+    \tikzstyle{every node}=[font=\normalsize]
+    \draw (0,3) to[R] (3,3);
+    \draw (3,3) to[R] (3,0);
+    \draw (3,3) to[R] (6,3);
+    \draw (6,3) to[R] (6,0);
+    \draw (6,0) to[short] (0,0);
+    \node at (3,3) [circ] {};
+    \node at (3,0) [circ] {};
+    \node [font=\normalsize] at (1.5,3.5) {$R_1$};
+    \node [font=\normalsize] at (0.75,1.5) {$I_q$};
+    \node [font=\normalsize] at (3.5,1.5) {$R_2$};
+    \node [font=\normalsize] at (4.5,3.5) {$R_3$};
+    \node [font=\normalsize] at (6.5,1.5) {$R_4$};
+    \draw (0,0) to[american current source] (0,3);
+    \draw [ color={rgb,255:red,162; green,162; blue,162}, line width=0.6pt, ->, >=Stealth] (1,2.5) .. controls (1.5,2.25) and (1.5,0.75) .. (1,0.5) node[pos=0.5, fill=white]{$U_q$};
+    \draw (6,3) to[short, -o] (6.25,3) ;
+    \draw (6,0) to[short, -o] (6.25,0) ;
+    \draw [ color={rgb,255:red,0; green,128; blue,255}, line width=0.6pt, ->, >=Stealth] (6.75,2.5) .. controls (7.25,2.25) and (7.25,0.75) .. (6.75,0.5) node[pos=0.5, fill=white]{$U_1$};
+\end{circuitikz}
+}%

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="117.47578mm"
+   height="32.01326mm"
+   viewBox="0 0 117.47578 32.01326"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="Elektrischer Strom.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     inkscape:zoom="2.4943883"
+     inkscape:cx="154.14601"
+     inkscape:cy="66.950282"
+     inkscape:window-width="1440"
+     inkscape:window-height="938"
+     inkscape:window-x="213"
+     inkscape:window-y="1433"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g6" />
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="Triangle"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="Triangle-2"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Triangle arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         transform="scale(0.5)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path135-2" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-26.701437,-122.33093)">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+       d="m 28.201437,150.30767 c 31.051584,-24.15123 23.946076,-19.73791 38.551968,-21.4511 14.26466,-1.67316 27.117723,11.95767 41.477265,11.66861 12.07194,-0.24301 24.09077,-15.15508 34.44654,-11.20502"
+       id="path1"
+       sodipodi:nodetypes="caac"
+       inkscape:label="leiter" />
+    <g
+       id="g4"
+       inkscape:label="strombezeichner"
+       style="display:inline">
+      <path
+         style="fill:none;stroke:#ff0000;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Triangle)"
+         d="m 84.65456,132.88655 1.407091,0.63936"
+         id="path2"
+         sodipodi:nodetypes="cc"
+         inkscape:label="richtung" />
+      <text
+         xml:space="preserve"
+         style="font-size:3.175px;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         x="87.941986"
+         y="127.76901"
+         id="text3"
+         inkscape:label="tiefgestellt"><tspan
+           sodipodi:role="line"
+           id="tspan3"
+           style="stroke-width:1.5"
+           x="87.941986"
+           y="127.76901">1</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:5.59303px;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1.76158;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         x="85.28289"
+         y="126.39735"
+         id="text5"
+         inkscape:label="text"><tspan
+           sodipodi:role="line"
+           id="tspan5"
+           style="fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1.76158"
+           x="85.28289"
+           y="126.39735">I</tspan></text>
+    </g>
+    <g
+       id="g5"
+       inkscape:label="strombezeichner"
+       style="display:inline">
+      <path
+         style="fill:none;stroke:#ff0000;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Triangle-2)"
+         d="m 114.3796,139.59568 -1.88815,0.28792"
+         id="path2-0"
+         sodipodi:nodetypes="cc"
+         inkscape:label="richtung" />
+      <text
+         xml:space="preserve"
+         style="font-size:3.175px;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         x="113.98922"
+         y="132.3419"
+         id="text3-6"
+         inkscape:label="tiefgestellt"><tspan
+           sodipodi:role="line"
+           id="tspan3-1"
+           style="stroke-width:1.5"
+           x="113.98922"
+           y="132.3419">1</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:5.59303px;display:inline;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1.76158;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         x="108.79345"
+         y="130.95209"
+         id="text5-5"
+         inkscape:label="text"><tspan
+           sodipodi:role="line"
+           id="tspan5-8"
+           style="fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1.76158"
+           x="108.79345"
+           y="130.95209">-I</tspan></text>
+    </g>
+    <g
+       id="g6"
+       inkscape:label="Strombezeichner">
+      <path
+         style="fill:none;fill-opacity:1;stroke:#ff7800;stroke-width:1;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Triangle-2)"
+         d="M 35.053011,153.84419 C 47.874486,142.48928 52.020735,141.56504 52.020735,141.56504"
+         id="path5"
+         inkscape:label="richtung" />
+      <text
+         xml:space="preserve"
+         style="font-size:3.175px;display:inline;fill:#ff7800;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         x="47.094509"
+         y="154.01338"
+         id="text3-5"
+         inkscape:label="tiefgestellt"><tspan
+           sodipodi:role="line"
+           id="tspan3-7"
+           style="fill:#ff7800;fill-opacity:1;stroke-width:1.5"
+           x="47.094509"
+           y="154.01338">1</tspan></text>
+      <text
+         xml:space="preserve"
+         style="font-size:5.59303px;display:inline;fill:#ff7800;fill-opacity:1;stroke:none;stroke-width:1.76158;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:none;stroke-opacity:1"
+         x="44.435413"
+         y="152.64172"
+         id="text5-6"
+         inkscape:label="text"><tspan
+           sodipodi:role="line"
+           id="tspan5-0"
+           style="fill:#ff7800;fill-opacity:1;stroke:none;stroke-width:1.76158"
+           x="44.435413"
+           y="152.64172">I  (USA)</tspan></text>
+    </g>
+  </g>
+</svg>

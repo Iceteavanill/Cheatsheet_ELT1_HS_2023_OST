@@ -1,0 +1,15 @@
+% LTeX: enabled=false
+\begin{circuitikz}
+    \tikzstyle{every node}=[font=\large]
+    \node [font=\LARGE] at (-0.25,0.5) {k};
+    \node [font=\LARGE] at (2.25,0.5) {l};
+    \draw (3.75,0) to[short, -o] (3.5,0) ;
+    \draw (5.75,0) to[short, -o] (6,0) ;
+    \node [font=\LARGE] at (3.5,0.5) {m};
+    \node [font=\LARGE] at (6,0.5) {n};
+    \node at (-0.25,0) [circ] {};
+    \node at (2.25,0) [circ] {};
+    \draw (3.75,0) to[american controlled current source, l = $g U_S$] (5.75,0);
+    \draw [ color={rgb,255:red,0; green,128; blue,255}, ->, >=Stealth] (0,0.25) .. controls (0.25,0.75) and (1.75,0.75) .. (2,0.25) ;
+    \node [font=\large, color={rgb,255:red,0; green,128; blue,255}] at (1,1) {$U_s$};
+\end{circuitikz}        

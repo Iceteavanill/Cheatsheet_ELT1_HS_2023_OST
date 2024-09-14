@@ -1,0 +1,15 @@
+% LTeX: enabled=false
+\begin{circuitikz}[european]
+    \draw (0,2) to[battery1, o-o, v=$U_q$, name=v1, !vi ,bipole/is voltage=false] (0,0);
+    \varr{v1};
+    \node at(0,-0.5) {Typ 1};
+    \draw (2,2) to[vsource, o-o, v=$U_q$, name=v2, !vi, bipole/is voltage=false] (2,0);
+    \varr{v2};
+    \node at(2,-0.5) {Typ 2};
+\end{circuitikz}
+\begin{circuitikz}
+    \node at(0,-0.5) {};
+    \draw (1,2) to[V, o-o, v, !vi, name=v1, bipole/is voltage=false] (1,0);
+    \draw[-Latex,blue] (v1-Vfrom) to[bend left=55, blue]  node[midway, right] {$U_q$}(v1-Vto);
+    \node at(1,-0.5) {Typ 3};
+\end{circuitikz}

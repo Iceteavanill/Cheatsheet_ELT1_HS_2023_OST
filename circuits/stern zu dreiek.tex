@@ -1,0 +1,18 @@
+% LTeX: enabled=false
+\begin{circuitikz}[scale=0.75]
+    \draw (0,0) to[R,l=$\text{R}_\text{AB}$,o-o] (1.5,2.598);
+    \draw (0,0) to[R,l=$\text{R}_\text{BC}$,o-o] (3,0);
+    \draw (1.5,2.598) to[R,l=$\text{R}_\text{BC}$,o-o] (3,0);
+    \node at(0,0) [left]{B};
+    \node at(1.5,2.598) [above]{A};
+    \node at(3,0) [right]{C};
+    \draw[-Latex] (3,1.299) -- node[midway, above] {umformen} (4,1.299);
+\end{circuitikz}
+\begin{circuitikz}[scale=0.75]
+    \draw (0,0) to[R,l=$\text{R}_\text{B}$,o-*] (1.5,1.299);
+    \draw (3,0) to[R,l=$\text{R}_\text{C}$,o-*] (1.5,1.299);
+    \draw (1.5,2.598) to[R,l=$\text{R}_\text{A}$,o-*] (1.5,1.299);
+    \node at(0,0) [left]{B};
+    \node at(1.5,2.598) [above]{A};
+    \node at(3,0) [right]{C};    
+\end{circuitikz}

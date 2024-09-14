@@ -1,0 +1,45 @@
+% LTeX: enabled=false
+\begin{circuitikz}
+    \tikzstyle{every node}=[font=\normalsize]
+    \draw (2.25,14) to[american current source] (2.25,11);
+    \draw (5.5,11) to[R] (5.5,14);
+    \draw (8.75,12.5) to[R] (8.75,14);
+    \draw (2.25,14) to[short] (8.75,14);
+    \draw (2.25,11) to[R] (5.5,11);
+    \draw (5.5,9.5) to[R] (5.5,11);
+    \draw (8.75,8) to[american controlled current source] (8.75,9.5);
+    \draw (2.25,8) to[short] (5.5,8);
+    \node [font=\normalsize] at (1.5,12.5) {$I_q$};
+    \node [font=\normalsize] at (4,11.5) {$R_1$};
+    \node [font=\normalsize] at (6,12.5) {$R_2$};
+    \node [font=\normalsize] at (9.25,13.25) {$R_3$};
+    \node [font=\normalsize] at (9.75,8.75) {$g \cdot U_s$};
+    \node [font=\normalsize] at (6,10.25) {$R_4$};
+    \node [font=\normalsize] at (4.5,8.75) {$r \cdot I_s$};
+    \node [font=\normalsize] at (7.25,11.5) {$U_q$};
+    \draw [ color={rgb,255:red,255; green,0; blue,0}, ->, >=Stealth] (7,14) -- (7.25,14);
+    \draw [ color={rgb,255:red,0; green,128; blue,255}, ->, >=Stealth] (5.25,13.5) .. controls (4.75,13.25) and (4.75,12) .. (5.25,11.5) ;
+    \node [font=\normalsize, color={rgb,255:red,0; green,128; blue,255}] at (4.5,12.5) {$U_s$};
+    \node [font=\normalsize, color={rgb,255:red,255; green,0; blue,0}] at (7.25,14.5) {$I_s$};
+    \node at (2.25,11) [circ] {};
+    \node at (5.5,11) [circ] {};
+    \node at (5.5,8) [circ] {};
+    \node at (8.75,11) [circ] {};
+    \node at (5.5,14) [circ] {};
+    \node [font=\normalsize, color={rgb,255:red,0; green,128; blue,255}] at (1.75,11) {$U_1$};
+    \node [font=\normalsize, color={rgb,255:red,0; green,128; blue,255}] at (5.5,14.5) {$U_2$};
+    \node [font=\normalsize, color={rgb,255:red,0; green,128; blue,255}] at (9.25,11) {$U_3$};
+    \node [font=\normalsize, color={rgb,255:red,0; green,128; blue,255}] at (5.5,7.5) {$U_4$};
+    \draw (4.75,10.25) to (4.75,10) node[ground]{};
+    \draw [short] (4.75,10.25) -- (5.5,11);
+    \node [font=\normalsize] at (4.25,10.25) {$"0"$};
+    \draw (8.75,11) to[american voltage source] (8.75,9.5);
+    \draw (5.5,11) to[short] (8.75,11);
+    \draw (8.75,11) to[american voltage source] (8.75,12.5);
+    \draw (5.5,9.5) to[american controlled voltage source] (5.5,8);
+    \draw (8.75,8) to[american controlled voltage source] (5.5,8);
+    \node [font=\normalsize] at (7.25,8.75) {$r \cdot I_s$};
+    \draw [ color={rgb,255:red,255; green,128; blue,0}, ](6.5,8) to[short] (7.75,8);
+    \draw [ color={rgb,255:red,255; green,128; blue,0}, ](8.75,9.75) to[short] (8.75,10.75);
+    \draw (2.25,11) to[short] (2.25,8);
+\end{circuitikz}

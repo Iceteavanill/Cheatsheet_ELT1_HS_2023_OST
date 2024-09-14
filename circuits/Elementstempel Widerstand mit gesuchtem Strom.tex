@@ -1,0 +1,11 @@
+% LTeX: enabled=false
+\begin{circuitikz}
+    \tikzstyle{every node}=[font=\LARGE]
+    \draw (0,0) to[R, l={ \Large R}] (2,0);
+    \draw (0,0) to[short, -o] (-0.25,0) ;
+    \draw (2,0) to[short, -o] (2.25,0) ;
+    \node [font=\LARGE] at (-0.25,0.5) {m};
+    \node [font=\LARGE] at (2.25,0.5) {n};
+    \draw [ color={rgb,255:red,255; green,0; blue,0}, ->, >=Stealth] (0,0) -- (0.25,0);
+    \node [font=\large, color={rgb,255:red,255; green,0; blue,0}] at (0.25,-0.5) {$I_s$};
+\end{circuitikz}

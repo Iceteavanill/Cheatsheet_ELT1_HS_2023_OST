@@ -1,0 +1,38 @@
+% LTeX: enabled=false
+\begin{circuitikz}
+    \tikzstyle{every node}=[font=\small]
+    \draw (3,11.75) to[american voltage source] (3,9.5);
+    \draw (3,11.75) to[R] (5.25,11.75);
+    \draw (5.25,11.75) to[R] (5.25,9.5);
+    \draw (5.25,11.75) to[R] (7.5,11.75);
+    \draw (7.5,9.5) to[american current source] (7.5,11.75);
+    \draw (3,9.5) to[short] (7.5,9.5);
+    \node at (5.25,11.75) [circ] {};
+    \node at (7.5,11.75) [circ] {};
+    \node at (5.25,9.5) [circ] {};
+    \draw [ color={rgb,255:red,255; green,0; blue,0}, ->, >=Stealth] (3.25,11.75) -- (3.5,11.75);
+    \node at (3,11.75) [circ] {};
+    \node [font=\small, color={rgb,255:red,255; green,0; blue,0}] at (3.75,9.25) {};
+    \node [font=\small, color={rgb,255:red,255; green,0; blue,0}] at (3.75,9.25) {};
+    \draw [ color={rgb,255:red,255; green,0; blue,0}, ->, >=Stealth] (4.75,11.75) -- (5,11.75);
+    \draw [ color={rgb,255:red,255; green,0; blue,0}, ->, >=Stealth] (5.25,10) -- (5.25,9.75);
+    \draw [ color={rgb,255:red,255; green,0; blue,0}, ->, >=Stealth] (5.75,11.75) -- (5.5,11.75);
+    \draw [ color={rgb,255:red,0; green,0; blue,255}, ->, >=Stealth] (5,11.25) .. controls (4.75,11) and (4.75,10.5) .. (5,10) ;
+    \draw [ color={rgb,255:red,0; green,0; blue,255}, ->, >=Stealth] (3.5,11.5) .. controls (3.75,11.25) and (4.5,11.25) .. (4.75,11.5) ;
+    \draw [ color={rgb,255:red,0; green,0; blue,255}, ->, >=Stealth] (7,11.5) .. controls (6.5,11.25) and (6.25,11.25) .. (5.75,11.5) ;
+    \node [font=\small, color={rgb,255:red,0; green,0; blue,255}] at (2,10.5) {$U_q$};
+    \node [font=\small, color={rgb,255:red,0; green,0; blue,255}] at (4,11) {$U_1$};
+    \node [font=\small, color={rgb,255:red,0; green,0; blue,255}] at (4.5,10.75) {$U_2$};
+    \node [font=\small, color={rgb,255:red,0; green,0; blue,255}] at (6.5,11) {$U_3$};
+    \node [font=\small, color={rgb,255:red,255; green,0; blue,0}] at (3.5,12) {$I_0$};
+    \node [font=\small, color={rgb,255:red,255; green,0; blue,0}] at (5,12) {$I_1$};
+    \node [font=\small, color={rgb,255:red,255; green,0; blue,0}] at (5.5,12) {$I_3$};
+    \node [font=\small, color={rgb,255:red,255; green,0; blue,0}] at (5.5,9.75) {$I_2$};
+    \node [font=\small, color={rgb,255:red,255; green,0; blue,0}] at (8.25,10.75) {$I_q$};
+    \node [font=\small] at (4.25,12.25) {R1};
+    \node [font=\small] at (6.25,12.25) {R3};
+    \node [font=\small] at (5.75,10.5) {R2};
+    \draw [ color={rgb,255:red,0; green,0; blue,255}, ->, >=Stealth] (2.75,11.25) .. controls (2.25,11) and (2.25,10.25) .. (2.75,10) ;
+    \draw [ color={rgb,255:red,0; green,0; blue,255}, ->, >=Stealth] (7.25,11.25) .. controls (7,11) and (7,10.5) .. (7.25,10) ;
+    \node [font=\small, color={rgb,255:red,0; green,0; blue,255}] at (6.75,10.5) {$U_4$};
+\end{circuitikz}

@@ -1,0 +1,9 @@
+% LTeX: enabled=false
+\begin{circuitikz}
+    \draw  (1,2) to[short,o-o,i=$I_m$, !vi, name=I1] (1,0);
+     \iarr{I1};
+\end{circuitikz} 
+\begin{circuitikz}[american]
+    \node at(0,2.5){};
+    \draw (0.5,2) to[cvsource,o-o,l=$\gamma\cdot I_m$] (0.5,0);
+\end{circuitikz} 

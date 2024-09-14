@@ -1,0 +1,30 @@
+% LTeX: enabled=false
+\begin{tikzpicture}
+    \begin{axis}[
+        title={Random Voltage over Time},
+        xlabel={Time [s] $\rightarrow$ FALSCH},
+        ylabel={Spannung in V $\rightarrow$ korrekt},
+        xmin=0, xmax=10,
+        ymin=-5, ymax=5,
+        xtick={0,2,4,6,8,10},
+        ytick={-5,-3,...,5},
+        grid=both,
+        grid style={line width=.1pt, draw=gray!10},
+        major grid style={line width=.2pt,draw=gray!50},
+        minor tick num=1,
+        enlarge x limits={abs=0.5},
+        enlarge y limits={abs=0.5},
+        axis background/.style={fill=white},
+        legend style={at={(0.5,-0.1)},anchor=north},
+        no markers,
+        every axis plot/.append style={thick}
+    ]
+    
+    \addplot[
+        domain=0:10,
+        samples=100,
+        smooth,
+    ] {sin(deg(x)) + rand*0.5};
+    
+    \end{axis}
+\end{tikzpicture}

@@ -1,0 +1,63 @@
+\section{Nichtlineare Netzwerke / Leistungsanpassung}
+
+
+
+\begin{wrapfigure}{l}{0.1\linewidth}
+    \begin{circuitikz}
+        \draw (0,0) to[R] (0,1.5);
+        \draw [short] (0.5,1.5) -- (0.5,1);
+        \draw [short] (0.5,1) -- (-0.5,0.5);
+        \draw [short] (-0.5,0.5) -- (-0.5,0);   
+    \end{circuitikz}     
+\end{wrapfigure}
+
+Viele Netzwerke sind in der Praxis nicht linear.\\
+Meistens wird dabei ein nicht linearen Widerstand verwendet, um diesen Effekt zu modellieren.\\
+Das links stehende Schemasymbol wird dabei verwendet.\\
+Die Änderung des Widerstandswertes durch einen Effekt wie zum Beispiel Temperatur, licht oder mechanische Einwirkung herbeigeführt wird können Symbole diesen Effekt signalisieren. 
+Symbole wie z.B. Pfeile oder ein Temperatursymbol.\\ 
+
+
+\subsection{Leistungsanpassung}
+
+Leistungsanpassung beschreibt das Verfahren ein Widerstand an einer realen Quelle anzupassen, sodass die maximal mögliche Energie aus der Quelle fliesst. 
+Im Lineraren Fall entspricht der Lastwiderstand dem Innenwiderstand der Quelle. 
+
+\begin{multicols*}{2}
+    
+    \input{circuits/Leistungsanpassung thevenin.tex}
+
+    \begin{center}
+        \begin{tcolorbox}[colframe=violet , colback=white, arc is curved, hbox]
+            $R_l^\ast = R_i$
+        \end{tcolorbox}
+        Maximale leistung, $\eta=50\%$\\
+        Der Stern am $R_l$ signalisiert, dass Leistungsanpassung gemacht wurde. 
+    \end{center}
+
+
+    \newcolumn
+    \input{tikz/Leistungsanpassung.tex}
+\end{multicols*}
+
+\subsubsection{Herleitung des optimalen Lastwiderstands einer linearen Stromquelle}
+
+\begin{center}
+    \input{circuits/leistungsanpassung norton.tex}
+\end{center}
+
+\begin{align*}
+    U_{RL} & = \frac{R_i R_l I}{R_i + R_l}\\
+    P_{R_l} & = \frac{1}{R_L}(U(R_l))^2\\
+    0 & = \frac{d P(R_l)}{d R_l}\\
+    0 & = R_l' (U(R_l))^2 + 2\frac{1}{R_L}(U(R_l)')\\
+    0 & = -\frac{1}{R_l^2}\frac{R_i^2 R_l^2 I^2}{(R_i + R_l)^2 } + 2\frac{1}{R_l} \frac{R_i R_l I}{R_i + R_l}\left(\frac{R_i I(R_i + R_L)- R_i R_lI}{(R_i + R_l)^2}\right)\\
+    0 & = 2 \frac{R_i^3 I^2}{(R_i + R_l)^3} - \frac{R_i^2  I^2}{(R_i + R_l)^2 }\\
+    \frac{R_i^2  I^2}{(R_i + R_l)^2 } & = 2 \frac{R_i^3 I^2}{(R_i + R_l)^3}\\
+    R_i^2 I^2 (R_i + R_l) & = 2 R_i^3 I^2\\
+    2R_I & = R_i + R_l\\
+    R_i &= R_l
+\end{align*}
+
+Im falle eines nicht linearen Widerstands muss eine Formel für die Leistung über dem Lastwiderstand gefunden werden. 
+Die gefundene Formel muss dann abgeleitet und null gesetzt werden, ähnlich wie in der Herleitung.

@@ -1,0 +1,32 @@
+% LTeX: enabled=false
+\begin{circuitikz}
+    \tikzstyle{every node}=[font=\small]
+    \node at (3,0) [circ, color={rgb,255:red,255; green,128; blue,0}] {};
+    \draw (0,3.5) to[crossing] (0,4);
+    \draw (0,3) to[short] (0,3.5);
+    \draw (0,4) to[short] (0,4.25);
+    \draw (0,0) to[short] (-0.5,0);
+    \draw (-0.5,0) to[short] (-0.5,3.75);
+    \draw (-0.5,3.75) to[short] (3,3.75);
+    \draw (3,3.75) to[short] (3,3);
+    \draw (3,0) to[short] (3.5,0);
+    \draw (3.5,0) to[short] (3.5,4.25);
+    \draw (3.5,4.25) to[short] (0,4.25);
+    \draw (7,3) to[short] (7,0);
+    \draw (10,3) to[short] (10,0);
+    \draw [short] (7,3) -- (10,0);
+    \draw [short] (10,3) -- (7,0);
+    \node at (0,3) [circ, color={rgb,255:red,128; green,0; blue,128}] {};
+    \node at (3,3) [circ, color={rgb,255:red,0; green,128; blue,255}] {};
+    \node at (0,0) [circ, color={rgb,255:red,0; green,255; blue,0}] {};
+    \draw [short] (0,0) -- (3,3);
+    \draw [short] (0,3) -- (3,0);
+    \node at (1.5,1.5) [circ, color={rgb,255:red,255; green,0; blue,0}] {};
+    \node at (10,3) [circ, color={rgb,255:red,128; green,0; blue,128}] {};
+    \node at (10,0) [circ, color={rgb,255:red,255; green,128; blue,0}] {};
+    \node at (7,0) [circ, color={rgb,255:red,0; green,255; blue,0}] {};
+    \node at (7,3) [circ, color={rgb,255:red,0; green,128; blue,255}] {};
+    \node at (8.5,1.5) [circ, color={rgb,255:red,255; green,0; blue,0}] {};
+    \draw [->, >=Stealth] (4.25,1.5) -- (6.5,1.5);
+    \node [font=\small] at (5.25,1.75) {umzeichnen};
+\end{circuitikz}

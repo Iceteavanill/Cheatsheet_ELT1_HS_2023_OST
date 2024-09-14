@@ -1,0 +1,9 @@
+% LTeX: enabled=false
+\begin{circuitikz}
+    \draw (0,0) to[I,l=$I_q$] (0,2)
+    -- (2,2) to[R,l=$R_i$,*-*] (2,0) -- (0,0);
+    \draw (2,2)to[short, -o] (4,2)
+    to[open,name=opn,v] (4,0)
+    to[short, o-] (2,0);
+    \draw[-Latex,blue] (opn-Vfrom) to[bend left, blue]  node[midway, right] {$U_{\text{out}}$}(opn-Vto);
+\end{circuitikz}

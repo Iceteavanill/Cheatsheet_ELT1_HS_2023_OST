@@ -1,0 +1,37 @@
+% LTeX: enabled=false
+\begin{circuitikz}
+    \tikzstyle{every node}=[font=\normalsize]
+    \draw (1.75,10.5) to[american controlled voltage source] (1.75,13.25);
+    \draw (1.75,13.25) to[R] (4.5,13.25);
+    \draw (4.5,13.25) to[R] (4.5,10.5);
+    \draw (4.5,13.25) to[american current source] (7.25,13.25);
+    \draw (4.5,13.25) to[short] (4.5,14.5);
+    \draw (7.25,13.25) to[short] (7.25,14.5);
+    \draw (4.5,14.5) to[R] (7.25,14.5);
+    \draw (7.25,13.25) to[R] (7.25,10.5);
+    \draw (10,10.5) to[american controlled current source] (10,13.25);
+    \draw (1.75,10.5) to[short] (10,10.5);
+    \draw (10,13.25) to[short] (7.25,13.25);
+    \node at (4.5,13.25) [circ] {};
+    \node at (7.25,13.25) [circ] {};
+    \node at (4.5,10.5) [circ] {};
+    \node at (7.25,10.5) [circ] {};
+    \node [font=\normalsize, color={rgb,255:red,128; green,0; blue,128}] at (1.75,13.5) {$1$};
+    \node [font=\normalsize, color={rgb,255:red,128; green,0; blue,128}] at (4.25,13.5) {$2$};
+    \node [font=\normalsize, color={rgb,255:red,128; green,0; blue,128}] at (7,13.5) {$3$};
+    \node [font=\normalsize, color={rgb,255:red,128; green,0; blue,128}] at (0.75,12) {$v_u \cdot U_S$};
+    \node [font=\normalsize] at (3,13.75) {$R_1$};
+    \node [font=\normalsize] at (4,12) {$R_2$};
+    \node [font=\normalsize] at (5.75,12.5) {$I_q$};
+    \node [font=\normalsize] at (6,15) {$G_3$};
+    \node [font=\normalsize] at (11,11.75) {$V_i \cdot I_s$};
+    \node [font=\normalsize] at (6.75,11.75) {$G_4$};
+    \draw (2.25,10.5) to (2.25,10.25) node[ground]{};
+    \node at (2.25,10.5) [circ] {};
+    \draw [ color={rgb,255:red,255; green,0; blue,0}, ->, >=Stealth] (1.75,12.75) -- (1.75,13);
+    \draw [ color={rgb,255:red,255; green,0; blue,0}, ->, >=Stealth] (4.5,11) -- (4.5,10.75);
+    \node [font=\normalsize, color={rgb,255:red,255; green,0; blue,0}] at (1.5,13) {$I_q$};
+    \node [font=\normalsize, color={rgb,255:red,255; green,0; blue,0}] at (4.75,10.75) {$I_s$};
+    \draw [ color={rgb,255:red,0; green,128; blue,255}, ->, >=Stealth] (7.5,12.75) .. controls (8,12.5) and (8,11.25) .. (7.5,11) ;
+    \node [font=\normalsize, color={rgb,255:red,0; green,128; blue,255}] at (8.25,12) {$U_s$};
+\end{circuitikz}

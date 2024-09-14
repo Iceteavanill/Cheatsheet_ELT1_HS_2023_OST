@@ -1,0 +1,21 @@
+% LTeX: enabled=false
+\begin{circuitikz}
+    \tikzstyle{every node}=[font=\normalsize]
+    \draw (0,2) to[american voltage source,l={ \normalsize $U_0$}] (0,0);
+    \draw (0,2) to[R,l={ \normalsize $R_i$}] (2,2);
+    \draw (2,2) to[short, -o] (2.5,2) ;
+    \draw (2,0) to[short, -o] (2.5,0) ;
+    \draw (2,0) to[short] (0,0);
+    \draw [ color={rgb,255:red,115; green,0; blue,230} ](3.25,2) to[R,l={ \normalsize Rl}] (3.25,0);
+    \draw[ color={rgb,255:red,115; green,0; blue,230}, ] (3.25,2) to[short] (2.5,2);
+    \draw [ color={rgb,255:red,115; green,0; blue,230}, ](2.5,0) to[short] (3.25,0);
+    \draw [ color={rgb,255:red,115; green,0; blue,230}, ->, >=Stealth] (2.75,0.5) -- (3.75,1.5);
+    \draw [ color={rgb,255:red,0; green,0; blue,255}, short] (2.5,1.75) -- (4.5,1.5);
+    \draw [ color={rgb,255:red,0; green,0; blue,255}, short] (2.5,1.75) -- (2.5,0.25);
+    \draw [ color={rgb,255:red,0; green,0; blue,255}, short] (2.5,0.25) -- (4.5,0.5);
+    \draw [ color={rgb,255:red,0; green,0; blue,255}, short] (4.5,0.5) -- (4.5,0.25);
+    \draw [ color={rgb,255:red,0; green,0; blue,255}, short] (4.5,1.5) -- (4.5,1.75);
+    \draw [ color={rgb,255:red,0; green,0; blue,255}, short] (4.5,1.75) -- (5.25,1);
+    \draw [ color={rgb,255:red,0; green,0; blue,255}, short] (5.25,1) -- (4.5,0.25);
+    \node [font=\normalsize, color={rgb,255:red,0; green,0; blue,255}] at (4.75,1) {Pl};
+\end{circuitikz}  

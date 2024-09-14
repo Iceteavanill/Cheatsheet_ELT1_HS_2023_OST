@@ -1,0 +1,16 @@
+% LTeX: enabled=false
+\begin{circuitikz}
+    \tikzstyle{every node}=[font=\normalsize]
+    \draw (2,0) to[R,l={ \normalsize $R_i$}] (2,2);
+    \draw (2,2) to[short, -o] (2.5,2) ;
+    \draw (2,0) to[short, -o] (2.5,0) ;
+    \draw (2,0) to[short] (0,0);
+    \draw [ color={rgb,255:red,115; green,0; blue,230} ](3.25,2) to[R,l={ \normalsize Rl}] (3.25,0);
+    \draw[ color={rgb,255:red,115; green,0; blue,230}, ] (3.25,2) to[short] (2.5,2);
+    \draw [ color={rgb,255:red,115; green,0; blue,230}, ](2.5,0) to[short] (3.25,0);
+    \draw [ color={rgb,255:red,115; green,0; blue,230}, ->, >=Stealth] (2.75,0.5) -- (3.75,1.5);
+    \draw (0,0) to[american current source, l = $I$] (0,2);
+    \draw (0,2) to[short] (2,2);
+    \node at (2,0) [circ] {};
+    \node at (2,2) [circ] {};
+\end{circuitikz}

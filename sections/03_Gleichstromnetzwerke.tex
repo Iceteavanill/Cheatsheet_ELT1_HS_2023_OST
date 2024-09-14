@@ -1,0 +1,337 @@
+\section{Gleichstromnetzwerke}
+
+Generell wird im folgenden Abschnitt nur lineare Gleichstromnetzwerke behandelt. 
+Ein Netzwerk besteht in der Regel aus mindestens 2 verknüpften Komponenten. 
+Alle Verbindungen werden als ideale Verbindung zu betrachten.
+
+\subsection{Ideale Quellen}
+
+\subsubsection{Spannungsquelle}
+
+Eine Ideale Spannungsquelle legt fest das über den Anschlüssen die festgelegte Spannung herrscht. 
+Es ist egal, wie gross die Last ist. 
+Die Spannung bleibt gleich.\\
+Es gibt verschiedene Symbole:\\
+\begin{center}
+    \input{circuits/spannungsquellen.tex}
+    \begin{itemize}
+        \item \textbf{Typ 1} stellt eine Batterie dar. Durch das Symbol ist klar welche Polarität herrscht. Dh kann nur eine Spannung ohne Spannungspfeil gezeichnet werden.
+        \item \textbf{Typ 2} ist die Europäische Darstellungsart. Sie ist weniger gebräuchlich da zwingend immer ein Pfeil mit der Spannung gezeichnet werden muss.
+        \item \textbf{Typ 3} ist die Amerikanische Variante. Sie ist die gebräuchlichste Variante da die Polarität auch klargestellt ist.
+    \end{itemize}
+\end{center}
+
+\subsubsection{Stromquelle}
+
+Eine Ideale Stromquelle legt fest das durch das Symbol der festgelegte Stom fliesst. 
+Es ist egal wie gross die Last ist. 
+Der Strom fliesst durch.\\
+Es gibt verschiedene Symbole:\\
+\begin{center}
+    \input{circuits/Stromquellen.tex}
+\end{center}
+
+\begin{itemize}
+    \item \textbf{Typ 1} ist die Europäische Darstellungsart. Sie braucht ein Strompfeil da die Richtung des Stromes nicht definiert ist.
+    \item \textbf{Typ 2} braucht auch ein Strompfeil, aber nicht sehr gebräuchlich.
+    \item \textbf{Typ 3} ist die amerikanische Art und am gebräuchlichsten da die Stromrichtung schon definiert ist.
+\end{itemize}
+
+\subsubsection{Aussage ob Quelle oder keine Quelle}
+
+Die obigen Quellen sagen lediglich aus, ob eine Spannung oder ein Strom an einem Punkt existiert. 
+Ob die Quelle schlussendlich wirklich eine Quelle ist, daher Energie ins System liefert, muss durch abgleich mit der korrespondierenden Spannung / Strom über der Quelle (siehe Kapitel \ref{source_sink}).\\
+
+\subsubsection{Widersprüche}
+
+Es gibt Widersprüche welche durch die obigen Quellen entstehen können:\\
+\begin{center}
+    \input{circuits/Widersprüche.tex}
+\end{center}
+
+Die beiden obigen Schaltungen sind Widersprüchlich, hervorgerufen durch (oder fehlenen) roten idealen Verbindungen.\\ 
+In Schaltung 1 sind die beiden Pole einer Idealen Spannungsquelle verbunden. 
+Allerdings ist sie Spannung grösser als 0. 
+Die Spannung kann nicht grösser als 0 sein, aber an beiden Polen gleich. 
+Ein Widerspruch.\\
+In Schaltung 2 erzeugt die ideale Stromquelle ein Strom der grösser ist als 0, dieser kann allerdings nicht fliessen da keine Verbindung vorhanden ist. 
+Ein Widerspruch.\\
+
+\subsection{Gesteuerte Quellen}
+
+In der Elektrotechnik viel gebrauchte Elemente sind sogenannte gesteuerte Quellen. 
+Sie haben eine Messgrösse, welcher dann mit dem Steuerparameter multipliziert wird und dann als Ausgangsgrösse ausgegeben wird. 
+Die Messgrösse und Ausgangsgrösse kann entweder Spannung oder Strom sein. 
+Daher gibt es 4 verschiedene Arten Gesteuerte Quellen.\\
+\begin{itemize}
+    \item Spannungsgesteuerte Spannungsquelle (VCVS)
+    \item Spannungsgesteuerte Stromquelle (VCCS)
+    \item Stromgesteuerte Spannungsquelle (CCVS)
+    \item Stromgesteuerte Stromquelle (CCCS)
+\end{itemize}
+Der Steuerparameter der VCVS und CCCS sind einheitenlose Grössen, welche meist mit Symbolen wie $g, v, r  \text{ oder } \gamma$ bezeichnet. 
+Die Steuerparameter der VCCS und CCVS müssen die Messgrösse in die Ausgangsgrösse umwandeln und haben dadurch eine Einheit.\\
+$\text{VCCS} \xrightarrow{} \unit{\ohm}$\\
+$\text{CCVS} \xrightarrow{} \unit{\siemens}$\\
+Symbole und dessen Messklemmen:\\
+
+\begin{center}
+\begin{tabular}{|c||c|}\hline
+    VCVS & VCCS\\\hline
+    \input{circuits/vcvs.tex} & \input{circuits/vccs.tex}
+     \\\hline\hline
+    CCCS & CCVS\\\hline
+    \input{circuits/cccs.tex} & \input{circuits/ccvs.tex}
+     \\\hline
+\end{tabular}
+\end{center}
+
+\subsection{Lineare Quellen}
+
+Eine lineare Quelle besteht aus einer Idealen Quelle und einem (linearen) Widerstand. 
+Die Spannung der Quelle verhält sich linear zu dem Strom, der aus der Quelle fliesst. 
+Mann kann eine lineare Quelle mit einer Spannungs- oder Stromquelle realisieren. 
+Man unterscheidet dabei zwischen einer Thévenin oder einer Norton Quelle. 
+Lineare Quellen haben 3 verschiedene Eigenschaften. 
+\begin{itemize}
+    \item \textbf{Leerlaufspannung} ist die Spannung welche an der Ausgangsklemme anliegt wenn keine last anliegt
+    \item \textbf{Kurzschlussstom} ist der maximale Strom welche durch einen kurzschluss an der Ausgangsklemme angelegt erzeugt werden kann
+    \item \textbf{Innenwiderstand} ist der innere Widerstand der Quelle
+\end{itemize}
+
+Wenn 2 dieser Eigenschaften bekannt sind, kann die letzte berechnet werden da diese linear abhängig ist.
+
+\subsubsection{Thévenin Quelle}
+
+Eine Thévenin Quelle besteht aus einer Idealen Spannungsquelle und einem Widerstand in der folgenden Konstellation:
+
+\begin{center}
+    \input{circuits/thevenin quelle.tex}
+\end{center}
+
+\subsubsection{Norton Quelle}
+
+Eine Nortonquelle besteht aus einer Idealen Stromquelle und einem Widerstand in der folgenden Konstellation:
+
+\begin{center}
+    \input{circuits/norton quelle.tex}
+\end{center}
+
+\subsection{Helmholz, Thévenin, Norton - Theorem}
+
+Das Helmholz- / Thévenin- und das Nortontheorem sagen etwas sehr Ähnliches aus. 
+Helmholz / Thévenin stellen fest das alle Kombinationen aus linearen Widerständen und idealen Spannungsquellen auf eine Thévenin Quelle reduziert werden können. 
+Norton hat das erweitert das man auch auf eine Norton Quelle reduzieren kann. 
+Daher, wenn man eine Thévenin quelle hat, kann man diese zu einer Norton Quelle umwandeln und umgekehrt. 
+Dies kann sehr nützlich sein, um lineare Netzwerke zu lösen.
+
+\subsection{Superposition / Überlagerungssatz}
+
+Superposition ermöglicht das schrittweise Erkunden von Schaltungen durch Ausschalten von idealen Quellen bis auf eine und das anschliessende überlagern(summieren der strömen). 
+Voraussetzung ist eine Lineare Schaltung. 
+Alle passiven Bauteile bleiben immer gleich. 
+Es werden nur die Quellen verändert. 
+Wenn abhängige Quellen, welche wirklich abhängig sind, im Netzwerk vorhanden sind dann dürfen diese nicht ausgeschaltet werden und müssen immer eingeschalten bleiben. 
+Thévenin und Norton Quellen werden verschieden abgeschaltet. 
+Eine Thévenin Quellen wird zu einer idealen Verbindung (nicht kurzgeschlossen!). 
+Eine Norton Quelle wird zu einem idealen Unterbruch.
+
+\begin{center}
+    \input{circuits/quellen ausschalten.tex}
+\end{center}
+
+\subsubsection{Leistung bei Superposition}
+
+Leistung darf während dem Superpositionieren nicht separat berechnet werden. 
+Es müssen alle Quellen superponiert werden, summiert und dann darf erst Leistung berechnet werden. 
+Ansonsten stimmt das Resultat nicht.
+
+\subsubsection{Beispiel}
+
+\begin{center}
+    \input{circuits/Superposition Beispiel.tex}
+\end{center}
+
+In diesem Beispiel wurden alle Quellen nacheinander ausgeschaltet und die Ströme eingezeichnet. 
+Nun können die Ströme summiert und die Leistungen bestimmt werden.
+\subsection{Reziprozität /Kirchhoffscher Umkehrungssatz}
+
+
+In einem Netzwerk mit nur einer realen Idealen Quelle kann die Quelle und eine Messgrösse ausgetauscht werden. 
+Das Verhältnis bleibt gleich. 
+Die Quellgrösse, welche im veränderten Netzwerk angelegt wird, ist aber nicht gleich.
+
+\subsubsection{Herleitung mit Spannungsquelle}
+
+\begin{multicols*}{2}
+    \begin{center}
+        \input{circuits/reziprokes Netzwerk V 1.tex}
+    \end{center}
+    \begin{align*}
+        I_1 &= \frac{U_q}{R_1 + (R_2 \parallel (R_3 + R_4))} \cdot \frac{R_2}{R_1 + R_3 + R_4}\\
+        I_1 &= \frac{U_q R_2}{\left(R_1 + \frac{R_2(R_3 + R_4)}{R_1 + R_3 + R_4}\right)\left(R_2 + R_3 + R_4\right)}\\
+        I_1 &= \frac{U_q R_2}{R_1(R_1 + R_3 + R_4) + R_2(R_3 + R_4)}
+    \end{align*}
+    \newcolumn
+
+    \begin{center}
+        \input{circuits/reziprokes Netzwerk V 2.tex}
+    \end{center}
+    \begin{align*}
+        I_2 &= \frac{U_q}{(R_1 \parallel R_2) + R_3 + R_4 }\frac{R_2}{R_1 + R_2}\\
+        I_2 &= \frac{U_q R_2}{\left(\frac{R_1 R_2}{R_1 + R_2} + R_3 + R_4 \right)(R_1 + R_2)}\\
+        I_2 &= \frac{U_q R_2}{R_1 R_2 + R_3 (R_1 + R_2) + R_4(R_1 + R_2)}
+    \end{align*}
+
+\end{multicols*}
+\begin{center}
+    $R_1 R_2 + R_1 R_3 + R_1 R_4 + R_2 R_3 + R_2 R_4 \mathcolor{red}{=} R_1 R_2 + R_1 R_3 + R_1 R_4 + R_2 R_3 + R_2 R_4$
+\end{center}
+
+\subsubsection{Herleitung mit Stromquelle}
+
+\begin{multicols*}{2}
+    \begin{center}
+        \input{circuits/reziprokes Netzwerk I 1.tex}
+    \end{center}
+    \[U_1 = I_q \frac{R_2}{R_2 + R_3 + R_4} R_4\]
+    \newcolumn
+
+    \input{circuits/reziprokes Netzwerk I 2.tex}
+    \[U_2 = I_q \frac{R_4}{R_2 + R_3 + R_4} R_2\]
+
+\end{multicols*}
+\begin{center}
+    $U_1 = U_2$\\
+    \begin{tcolorbox}[colframe=red , colback=white, arc is curved, hbox]
+        $U_q \neq U_q'$
+    \end{tcolorbox}
+\end{center}
+
+
+\subsection{Ideale Quellen verschieben}\label{Quelln verschieben}
+
+Ideale Quellen Lassen sich verschieben. 
+Für das Systematische lösen von Netzwerken kann das von Vorteil sein. 
+Allerdings ist es immer ein tradeof. 
+Man verfälscht und verliert immer Potenziale oder Ströme. 
+Mann kann sich jedoch zu Beginn eine Formel zurechtlegen, falls diese wieder interessant werden. 
+Das Verfahren für Strom und Spannungsquelle ist prinzipiell das gleiche.
+
+
+\subsubsection{Ideale Stromquellen}
+
+Ein virtueller Strom wird über die vorhandene Quelle gelegt. 
+Der Quellstrom wird in der Summe null. 
+Da der Strom jedoch nicht einfach so verschwindet müssen neue Stromquellen hinzugefügt werden, welche den Strom im Kreis führen:
+
+\begin{center}
+    \input{circuits/ideale Stromquelle verchieben.tex}
+\end{center}
+
+
+Das Netzwerk hat nun eine möglicherweise mühsame Stromquelle weniger, allerdings generell mehr. 
+Am besten schiebt man diese auf eine ideale Spannungsquelle, um diese ebenso zu eliminieren.
+
+
+\subsubsection{Ideale Spannungsquellen}
+
+Bei Idealen Spannungsquellen gilt dasselbe wie für ideale Stromquellen. 
+Sie werden über einen Knoten hinweg geschoben. 
+Mann kann sich das auch als zwingenden Ausgleich durch das Entfernen der ersten Spannungsquelle vorstellen.
+
+\begin{center}
+    \input{circuits/ideale Spannungsquelle verschieben.tex}
+\end{center}
+
+Note: Das Potenzial $\varphi$ hat sich nach oben verschoben.
+
+\subsection{Widerstände}
+\begin{wrapfigure}{l}{0.1\linewidth}
+    \begin{circuitikz}
+        \draw(0,0) to[R,o-o,l=R] (0,1.5);
+    \end{circuitikz}
+    \begin{circuitikz}[american resistors]
+        \draw(0,0) to[R,o-o,l=R] (0,1.5);
+    \end{circuitikz}
+\end{wrapfigure}
+
+Fixe, lineare Widerstände haben typischerweise die links stehenden Schaltungssymbole.\\
+Links das Europäische(mehr gebräuchlich), rechts das Amerikanische.\\
+Es gibt verschieden elementare Schaltungen welche einfacher separat analysiert werden können.\\
+
+\subsubsection{Serienschaltung}
+
+Wenn Widerstände in Serie zueinander stehen, können sie summiert werden.\\
+\begin{center}
+    \input{circuits/serienschaltung.tex}
+\end{center}
+    
+\[ \text{R}_\text{tot} = \sum_{\text{i}=1}^{\text{n}} \text{R}_\text{i}\]
+
+\subsubsection{Paralellschaltung}
+
+Wenn Widerstände parallel zueinander stehen, können ihre Leitwerte zusammengezählt werden.\\
+
+\begin{center}
+    \input{circuits/paralellschaltung.tex}
+\end{center}
+
+\[ \text{R}_\text{tot} = \frac{1}{\sum_{\text{i}=1}^{\text{n}} \frac{1}{\text{R}_\text{i}}} \]
+
+Wenn \textbf{nur 2} Widerstände paralell stehen, kann folgende vereinfachte Formel verwendet werden: $\frac{\text{R1}\cdot\text{R2}}{\text{R1}+\text{R2}}$\\
+
+\subsubsection{Stern - dreieck umwandlung}
+
+Wenn Widerstände in eine Dreieckskonstellation sind, kann man sie in einen Stern und umgekehrt umwandeln.\\
+
+\begin{minipage}[b]{0.55\linewidth}
+    \centering
+
+    \input{circuits/dreieck zu stern.tex}
+
+\end{minipage}%%
+\begin{minipage}[b]{0.45\linewidth}
+    \centering
+    \[
+    \begin{aligned}
+        \text{R}_\text{AB} &= \text{R}_\text{A} + \text{R}_\text{B} + \frac{\text{R}_\text{A}\cdot\text{R}_\text{B}}{\text{R}_\text{C}}\\
+        \text{R}_\text{Ac} &= \text{R}_\text{A} + \text{R}_\text{C} + \frac{\text{R}_\text{A}\cdot\text{R}_\text{C}}{\text{R}_\text{B}}\\
+        \text{R}_\text{cB} &= \text{R}_\text{B} + \text{R}_\text{C} + \frac{\text{R}_\text{B}\cdot\text{R}_\text{C}}{\text{R}_\text{A}}
+    \end{aligned}
+    \]
+
+    \vspace{4ex}
+\end{minipage} 
+\begin{minipage}[b]{0.55\linewidth}
+    \centering
+
+    \input{circuits/stern zu dreiek.tex}
+
+    \vspace{4ex}
+\end{minipage}%% 
+\begin{minipage}[b]{0.45\linewidth}
+    \centering
+    \[
+    \begin{aligned}
+        \text{R}_\text{A} &= \frac{\text{R}_\text{AB}\cdot\text{R}_\text{AC}}{\text{R}_\text{AB}+\text{R}_\text{BC}+\text{R}_\text{AC}}\\
+        \text{R}_\text{B} &= \frac{\text{R}_\text{AB}\cdot\text{R}_\text{BC}}{\text{R}_\text{AB}+\text{R}_\text{BC}+\text{R}_\text{AC}}\\
+        \text{R}_\text{C} &= \frac{\text{R}_\text{AC}\cdot\text{R}_\text{BC}}{\text{R}_\text{AB}+\text{R}_\text{BC}+\text{R}_\text{AC}}
+    \end{aligned}
+    \]
+
+    \vspace{4ex}
+\end{minipage} 
+
+
+\subsection{Symetrien in Widerstandsnetzwerken}
+
+Symmetrien können beim Lösen von Widerstandsnetzwerken nützlich sein da komplette Netzwerke nur einmal zusammengefasst werden müssen. 
+Dabei ist das Äquipotentialprinzip sehr wichtig da ein Widerstand, der auf der Symmetrielinie liegt, aufgeteilt werden darf. 
+Dabei ist es egal ob in paralell oder in serie. 
+Voraussetzung ist das Gleiche Widerstandswerte vorligen.
+
+\input{circuits/Symetrien.tex}
+
+Nun können beide Seiten separat angeschaut werden. 
+Da beide Seiten identisch sind, kann nur eine Seite berechnet und der resultierende Wert halbiert werden. 

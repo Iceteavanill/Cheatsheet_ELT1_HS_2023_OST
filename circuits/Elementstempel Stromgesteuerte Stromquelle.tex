@@ -1,0 +1,19 @@
+% LTeX: enabled=false
+\begin{circuitikz}
+    \tikzstyle{every node}=[font=\large]
+    \node [font=\LARGE] at (-0.25,0.5) {k};
+    \node [font=\LARGE] at (2.25,0.5) {l};
+    \draw (3.75,0) to[short, -o] (3.5,0) ;
+    \draw (5.75,0) to[short, -o] (6,0) ;
+    \node [font=\LARGE] at (3.5,0.5) {m};
+    \node [font=\LARGE] at (6,0.5) {n};
+    \node at (-0.25,0) [circ] {};
+    \node at (2.25,0) [circ] {};
+    \draw (3.75,0) to[american controlled voltage source,l={ \large $r I_s$}] (5.75,0);
+    \node [font=\large, color={rgb,255:red,255; green,0; blue,0}] at (4,-0.5) {$I_{qu}$};
+    \draw [ color={rgb,255:red,255; green,0; blue,0}, ->, >=Stealth] (3.75,0) -- (4,0);
+    \draw (-0.25,0) to[short] (2.25,0);
+    \node [font=\Large, color={rgb,255:red,255; green,0; blue,0}] at (4.5,-0.5) {};
+    \draw [ color={rgb,255:red,255; green,0; blue,0}, ->, >=Stealth] (1,0) -- (1.25,0);
+    \node [font=\large, color={rgb,255:red,255; green,0; blue,0}] at (1,0.5) {$I_s$};
+\end{circuitikz}

@@ -1,0 +1,22 @@
+% LTeX: enabled=false
+\resizebox{\columnwidth}{!}{%
+\begin{circuitikz}        
+    \tikzstyle{every node}=[font=\LARGE]
+    \draw (0,3) to[R] (3,3);
+    \draw (3,3) to[R] (3,0);
+    \draw (3,3) to[R] (6,3);
+    \draw (6,3) to[R] (6,1.5);
+    \draw (6,0) to[short] (0,0);
+    \node at (3,3) [circ] {};
+    \node at (3,0) [circ] {};
+    \node [font=\normalsize] at (1.5,3.5) {$R_1$};
+    \node [font=\normalsize] at (6.75,0.75) {$U_q$};
+    \node [font=\normalsize] at (3.5,1.5) {$R_2$};
+    \node [font=\normalsize] at (4.5,3.5) {$R_3$};
+    \node [font=\normalsize] at (6.5,2.5) {$R_4$};
+    \node [font=\normalsize, color={rgb,255:red,255; green,0; blue,0}] at (0.5,1.75) {$I_2$};
+    \draw (0,0) to[short] (0,3);
+    \draw [ color={rgb,255:red,255; green,0; blue,0}, ->, >=Stealth] (0,1.5) .. controls (0,1.5) and (0,1.5) .. (0,1.75) ;
+    \draw (6,0) to[american voltage source] (6,1.5);
+\end{circuitikz}
+}%

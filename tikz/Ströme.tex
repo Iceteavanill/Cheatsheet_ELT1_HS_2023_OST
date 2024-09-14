@@ -1,0 +1,18 @@
+% LTeX: enabled=false
+\begin{tikzpicture}
+    % Define the style for the currents
+    \tikzset{current/.style={-{Latex[length=2.5mm]},thick}}
+  
+    % Draw the node for the junction
+    \node[draw, circle, minimum size=0.3cm] (Junction) at (0,0) {};
+  
+    % Draw the currents entering and leaving the junction
+    \draw[current] (-2,0) -- (Junction) node[midway, above] {\(I_2\)};
+    \draw[current] (Junction) -- (2,0) node[midway, above] {\(I_1\)};
+    \draw[current] (0,-2) -- (Junction) node[midway, right] {\(I_3\)};
+  
+    % Optionally, add plus and minus signs
+    \node at (-0.7,0.3) {+};
+    \node at (1.4,0.3) {-};
+    \node at (0.5,-1) {+};
+  \end{tikzpicture}
