@@ -14,6 +14,8 @@ Die Zusammenfassung wurde sorgfältig erstellt, es kann allerdings keine Garanti
 
 Gefundene Fehler bitte per Issue melden. 
 
+Danke an Fabian Suter für die Ergänzungen.
+
 ## Quellen
 
 Einige Inhalte wurden aus den Unterrichtsmaterialien entnommen.
