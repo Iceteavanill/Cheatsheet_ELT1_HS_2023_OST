@@ -2,37 +2,36 @@
 
 {\color{red}Wichtiger Grundsatz}
 
-Das zu analysierende Netzwerk \textbf{MUSS} linear sein. 
-Ansonsten kann das Netzwerk nicht mit den folgenden Methoden analysiert werden.
-Grundsätzlich solle das zu analysierende Netzwerk immer zuerst maximal vereinfacht werden da dies meist zu weniger Aufwand führt. 
-Das schlussendliche Ziel ist es eine Matrixgleichung zu erhalten, welche man zuletzt invertieren muss.
+Das zu analysierende Netzwerk \textbf{MUSS} linear sein, ansonsten kann das Netzwerk nicht mit den folgenden Methoden analysiert werden.
+Grundsätzlich solle das zu analysierende Netzwerk immer zuerst maximal vereinfacht werden, da dies meist zu weniger Aufwand führt. 
+Das schlussendliche Ziel ist es, eine Matrixgleichung zu erhalten, welche man zuletzt invertieren muss.
 
 \subsection{Auswahl einer geeigneten Methode}
 
-Meisten ist die Wahl der Methode frei. 
-Um die optimale zu wählen, sollte immer der Aufwand von allen Methoden bestimmt werden und aufgrund dessen entschieden werden.
+Meistens ist die Wahl der Methode frei. 
+Um die Optimale zu wählen, sollte immer der Aufwand von allen Methoden bestimmt und aufgrund dessen entschieden werden.
 
 \subsection{Graphentheorie}
 
-Um elektrische Netzwerke zu analysieren wird ein mathematisches Teilgebiet namens Graphentheorie angewendet.
-Für systematische Netzwerkanalyse müssen ein paar Grundbegriffe geläufig sein:
+Um elektrische Netzwerke zu analysieren, wird ein mathematisches Teilgebiet namens Graphentheorie angewendet.
+Für die systematische Netzwerkanalyse müssen ein paar Grundbegriffe geläufig sein:
 
 \begin{itemize}
-    \item \textbf{Knoten} : Ein Punkt in welchem Zweige enden
+    \item \textbf{Knoten} : Ein Punkt, in welchem Zweige enden
     \item \textbf{Zweig/Kante} : Verbindet Knoten untereinander
-    \item \textbf{Weg} : Eine zusammenhängende Reihe von Knoten und zweigen (keine Kante doppelt)
-    \item \textbf{Baum} : Ein Weg welcher nirgends in einem Kreis geschlossen ist (sehr bildlich)
-    \item \textbf{Spannbaum} : Ein weg welcher alle Knoten miteinander verbindet
-    \item \textbf{Zyklus} : Ein weg welcher im gleichen Knoten beginnt und endet
-    \item \textbf{Kreis} : Ein Zyklus welcher keinen Knoten zweimal enthält
-    \item \textbf{Masche} : Ein Kreis welche Keine inneren oder äussere Zweige aufweist.
+    \item \textbf{Weg} : Eine zusammenhängende Reihe von Knoten und Zweigen (keine Kante doppelt)
+    \item \textbf{Baum} : Ein Weg, welcher nirgends in einem Kreis geschlossen ist (sehr bildlich)
+    \item \textbf{Spannbaum} : Ein Weg, welcher alle Knoten miteinander verbindet
+    \item \textbf{Zyklus} : Ein Weg, welcher im gleichen Knoten beginnt und endet
+    \item \textbf{Kreis} : Ein Zyklus, welcher keinen Knoten zweimal enthält
+    \item \textbf{Masche} : Ein Kreis, welcher keine inneren oder äussere Zweige aufweist.
 \end{itemize}
 
 \begin{center}
     \input{circuits/Graphentheorie.tex}
 \end{center}
 
-Anzahl an Elementen wird wie folgt angegeben:
+Die Anzahl an Elementen wird wie folgt angegeben:
 \begin{itemize}
     \item Zyklen : z
     \item Knoten : k
@@ -43,7 +42,7 @@ Anzahl an Elementen wird wie folgt angegeben:
 
 \subsection{Zweigstrommethode}
 
-Bei der Zweigstrommethode wird das Ohmsche und die beiden krichhoffschen Gesetze systematisch angewendet. 
+Bei der Zweigstrommethode wird das Ohmsche und die beiden kirchhoffschen Gesetze systematisch angewendet. 
 3 Gruppen an Gleichungen entstehen.
 
 \subsubsection{Zweiggleichungen}
@@ -51,32 +50,32 @@ Bei der Zweigstrommethode wird das Ohmsche und die beiden krichhoffschen Gesetze
 Anzahl: z - i - v
 
 Ohmsches Gesetz anwenden. 
-Darauf achten das keine Brüche vorkommen
+Darauf achten, dass keine Brüche vorkommen
 
 \subsubsection{Stromgleichungen}
 
 Anzahl: k - 1
 
-Kirchhoff current law umsetzen. 
-Bekannte quellen nach links nehmen.
+Kirchhoff I (KCL) umsetzen. 
+Bekannte Quellen nach links nehmen.
 
 \subsubsection{Spannungsgleichungen}
 
 Anzahl: z - k + 1
 
-Kirchhoff voltage law anwenden. 
+Kirchhoff II (KVL) anwenden. 
 Bekannte Quellen auf die linke Seite nehmen.
 
 
 \subsubsection{Zusammenführen}
 
 Zweiggleichungen in die Strom- und Spannungsgleichungen einsetzen. 
-Gleichungstablo aufstellen mit unbekannten als Vektor.
+Gleichungstableau aufstellen mit Unbekannten als Vektor.
 
 \subsubsection{Beispiel}
 
 In diesem Beispiel wird die maximale Anzahl Knoten verwendet.
-Ein Knoten könnte man sparen, allerdings bleibt der Rechenaufwand gleich.
+Einen Knoten könnte man sparen, allerdings bleibt der Rechenaufwand gleich.
 
 \begin{center}
     \input{circuits/Beispiel Zweigstrommethode.tex}
@@ -114,11 +113,11 @@ U_q = U_1 + U_2\\
 0 = U_2 + U_3 + U_4
 \]
 
-\textbf{einsetzen der Zweiggleichungen:}
+\textbf{Einsetzen der Zweiggleichungen:}
 
 \[
 U_q = R_1 \cdot I_1 + R_2 \cdot I_2\\
-0 = R_2 \cdot I_2 + R_3 \cdot I_3 + - U_4\\
+0 = R_2 \cdot I_2 + R_3 \cdot I_3  - U_4\\
 0 = I_1 - I_2 + I_3\\
 I_q = I_3\\
 0 = I_1 - I_0
@@ -129,7 +128,7 @@ I_q = I_3\\
 \[
 \begin{bmatrix}
     \cdot & R_1 & R_2 & \cdot  & \cdot\\
-    \cdot & R_2 & R_3 & \cdot  & -1\\
+    \cdot & \cdot & R_2 & R_3  & -1\\
     \cdot & 1 & -1 & 1 & \cdot \\
     \cdot & \cdot & 1 & \cdot  & \cdot\\
     -1 & 1 & \cdot & \cdot  & \cdot\\
@@ -151,16 +150,16 @@ I_q = I_3\\
 \end{pmatrix}
 \]    
 
-\subsection{Maschenstrom-/Kreisstrommethode}
+\subsection{Maschenstrom-/Kreisstrommethode (MSM)}
 
 \textbf{Aufwand} : M - 1 - i
 
-Bei der Kreisstrommethode werden verschiedene Kreisströme als unbekannte definiert. 
-Liegen diese auf Maschen spricht man von der Maschentrommethode. 
+Bei der Kreisstrommethode werden verschiedene Kreisströme als Unbekannte definiert. 
+Liegen diese auf Maschen, spricht man von der Maschenstrommethode. 
 KVL wird dabei stark genutzt. 
-Falls Ströme oder Spannungen gesucht werden, können diese durch einen einzelnen Kreisstrom am einfachsten bestimmt werden. \\
-Das Verfahren kann nur bei Planaren Schaltungen verwendet werden. 
-Das darf keine Überschneidungen der Zweige geben.    
+Falls Ströme oder Spannungen gesucht werden, können diese durch einen einzelnen Kreisstrom am einfachsten bestimmt werden.
+
+Das Verfahren kann nur bei \textit{planaren Schaltungen} verwendet werden, sprich, es darf keine Überschneidungen der Zweige geben.    
 \textbf{Achtung!} nicht planar wirkende Schaltungen können planar sein, wenn sie etwas umgezeichnet werden:
 
 \begin{center}
@@ -196,15 +195,13 @@ Das darf keine Überschneidungen der Zweige geben.
     \\
 \end{tabular}
 
-Die Matrix ist grundsätzlich Symmetrisch an der diagonalen. 
-In der Diagonalen sind die Summen aller Widerstände im Pfad der Kreisströme. 
-Alle Überlagerungen welche durch verschiedene Kreisströme durch denselben Widerstand entstehen, werden jeweils oberhalb und unterhalb davon notiert. 
-Diese sind \textbf{negativ}. 
-Entgegengesetzte Richtung \say{-} sonst \say{+}. 
+Die Matrix ist grundsätzlich symmetrisch an der Diagonalen, welche die Summen aller Widerstände im Pfad der Kreisströme enthält. 
+Alle Überlagerungen, welche durch verschiedene Kreisströme durch denselben Widerstand entstehen, werden jeweils oberhalb und unterhalb davon notiert und sind \textbf{negativ}. 
+Entgegengesetzte Richtung \say{-} sonst \say{+}.
+
 Gesteuerte Quellen brechen diese Symetrie.
-Wenn Kreisströme nicht unabhängig definiert sind, müssen sie trotzdem als Störfaktoren mit einbezogen werden. 
-Diese können in den Quellenvektor genommen werden. 
-Falls basierend auf vorherige Grössen können sie in die Matrix genommen werden.
+Wenn Kreisströme nicht unabhängig definiert sind, müssen sie trotzdem als Störfaktoren mit einbezogen werden und können in den Quellenvektor genommen werden. 
+Falls basierend auf vorherige Grössen, können sie in die Matrix genommen werden.
 
 \subsubsection{Einfaches Beispiel ohne gesteuerte Quellen}
 
@@ -255,7 +252,7 @@ Vorbereitungsgleichungen:
     J_4 &= -g\cdot U_s = -g\cdot R_2 \cdot (J_1 - J_2) = g\cdot R_2\cdot (I_q + J_2)\\ 
 \end{align*}
 
-gesucht sind $_J2$ \& $J_3$
+Gesucht sind $J_2$ \& $J_3$
 
 \[
 \begin{bmatrix}
@@ -293,22 +290,19 @@ Vereinfachen:
 
 \end{minipage}
 
-\subsection{Knotenpotentialmethode}
+\subsection{Knotenpotentialmethode (KPM)}
 
 \textbf{Aufwand:} k - 1 - v
 
 Bei der Knotenpotentialmethode wird implizit KCL verwendet. 
 Es werden Knoten definiert, welche in den Unbekanntenvektor eingefüllt werden. 
-Ein Knoten wird als \say{0} definiert. 
-Dieser wird nicht in den Vektor eingefügt.
-Die Matrix enthält nur Leitwerte.
-Die Diagonale sind die Leitwerte, die an den knoten angeschlossen sind. 
-Die Positionen neben der diagonalen sind \textbf{immer Negativ}. 
-Sie sind die Verbindungen zwischen den jeweiligen knoten. 
+Ein Knoten wird als \say{0} definiert und wird nicht in den Vektor eingefügt.
+Die Matrix enthält nur Leitwerte, wobei in der Diagonalen Leitwerte sind, die an den Knoten angeschlossen sind. 
+Die Positionen neben der Diagonalen sind \textbf{immer Negativ}und sind die Verbindungen zwischen den jeweiligen Knoten. 
 Wenn keine gesteuerte Quellen vorhanden sind, treten Widerstände entweder 1 oder 4-mal in der Matrix auf. 
 Bis auf die gesteuerten Quellen ist die Matrix symmetrisch. 
-Spannungsquellen sind problematisch da sie weder in die Matrix noch in den Quellvektor eingefügt werden können. 
-Sie müssen verschoben werden wie im Kapitel \ref{Quelln verschieben} gezeigt.
+Spannungsquellen sind problematisch, da sie weder in die Matrix noch in den Quellvektor eingefügt werden können. 
+Sie müssen verschoben werden, wie im Kapitel \ref{Quelln verschieben} gezeigt.
 
 \subsubsection{Beispiel}
 
@@ -350,7 +344,7 @@ Verschieben der Spannungsquellen:
         -I_q - \frac{U_q}{R_3}\\
     \end{pmatrix}
     \]
-    vereinfachen:
+    Vereinfachen:
     \[
     \begin{bmatrix}
         \frac{1}{R_1} + \frac{1}{R_4} & -\frac{r}{R_3\cdot R_4}-g \\
@@ -367,21 +361,20 @@ Verschieben der Spannungsquellen:
     \end{pmatrix}
     \]
 
-    Kontrolle: Matrix enthält nur Leitwert und Quellvektor nur Ströme.
+    Kontrolle: Matrix enthält nur Leitwerte und Quellvektor nur Ströme.
 \end{minipage}
 
 
-\subsection{Modifizierte Knotenpotentialmethode}
+\subsection{Modifizierte Knotenpotentialmethode (MNA)}
 
 \textbf{Aufwand:} K - 1 + v + s (s sind gesuchte Grössen)
 
-Die modifizierte Knotenpotentialmethode ist die allgemeinere Form der kpm. 
-Mit dieser kann jedes Netzwerk ohne vorherige Veränderung analysiert werden. 
-Die Matrix der kpm erhält lediglich mehr Variablen. 
-Zu der aufgestellten Matrix der kpm werden für die Ströme in idealen Spannungsquellen, gesuchte Ströme und Ströme in Spulen eine zusätzliche Variable ermittelt.  
+Die modifizierte Knotenpotentialmethode ist die allgemeinere Form der KPM. 
+Mit dieser kann jedes Netzwerk ohne vorherige Veränderung analysiert werden, sie erhält lediglich mehr Variablen. 
+Zu der aufgestellten Matrix der KPM werden für die Ströme in idealen Spannungsquellen, gesuchte Ströme und Ströme in Spulen eine zusätzliche Variable ermittelt.  
 Für diese muss dann auch eine zusätzliche Gleichung aufgestellt werden. 
 Für Ideale Spannungsquellen wird der Strom generell hineindefiniert.
-Im Allgemeinen kann die Matrix auch mit Elementstempel aufgestellt werden.
+Im Allgemeinen kann die Matrix auch mit Elementstempeln aufgestellt werden.
 Diese sind für alle Elemente definiert, die in einer Schaltung vorkommen. 
 
 \subsubsection{Elementstempel}
@@ -615,6 +608,6 @@ Für Abhängige Grössen wird jeweils eine weitere Gleichung gebraucht welche mi
 \end{pmatrix}
 \]
 
-An der markierten Stelle würde eigentlich $\frac{1}{R_2}$ Stehen laut NA.
-Da aber ein Strom des Widerstandes gesucht wird, ist dieser nach unten rechts gerutscht da er ansonsten doppelt vorkommt. 
+An der markierten Stelle würde eigentlich zusätzlich $\frac{1}{R_2}$ stehen laut NA.
+Da aber ein Strom des Widerstandes gesucht wird, ist dieser nach unten rechts gerutscht, da er ansonsten doppelt vorkommt. 
 Siehe Elementstempel.

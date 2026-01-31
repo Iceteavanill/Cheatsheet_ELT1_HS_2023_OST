@@ -1,31 +1,38 @@
 % LTeX: enabled=false
+% ========================================= DOCUMENT TYPE =========================================
 \documentclass[fontsize=8pt, a4paper, fleqn, DIV=calc]{scrartcl}
-\usepackage[utf8]{inputenc}
-\usepackage[ngerman]{babel}
+% Font size:        8pt
+% Paper size:       A4
+% Formula style:    fleqn (left-aligned equations)
 
-\usepackage{hyperref}%links in the pdf
+% ================================= PACKAGES, SETUP AND COMMANDS ==================================
+\usepackage[utf8]{inputenc}         % Input encoding: UTF-8
+\usepackage[ngerman]{babel}         % Language: German
+
+\usepackage{hyperref}               % Clickable links in the pdf
 \hypersetup{pdfborder = {0 0 0}}
 
-\usepackage{geometry}%layout
-\usepackage{tcolorbox}%section bars,...
-\usepackage{fancyhdr}%header
-\usepackage{lastpage}%obvious
-\usepackage{dirtytalk}% ""
-\usepackage{pdfpages}%Anhang
-\usepackage{siunitx}%obvious
+\usepackage{geometry}               % Page layout
+\usepackage{tcolorbox}              % Section bars,...
+\usepackage{fancyhdr}               % Header
+\usepackage{multicol}               % Multiple columns
+\usepackage{lastpage}               % Reference to last page
 \geometry{margin=1cm}
 \parindent 0pt
 \pagestyle{fancy}
-\usepackage{qrcode}%QR code im Titel
 
-\usepackage[table]{xcolor}
+\usepackage{dirtytalk}              % Easier "" quotes
+\usepackage{pdfpages}               % Include pdfs
+\usepackage{siunitx}                % Standardized units
+\usepackage{qrcode}                 % QR code im Titel
+\usepackage[table]{xcolor}          % Colored tables
 
 %Math stuff
-\usepackage{mathtools}
+\usepackage{mathtools}              % Math tools (extension of amsmath)
 \allowdisplaybreaks %allow display breaks in align
+\newcommand{\diff}{\ensuremath{\mathop{} \! \mathrm{d}}}        % custom command for differential operator d
 
-\usepackage{enumitem}%Itemise 
-
+\usepackage{enumitem}               % More control over itemize/enumerate
 
 %tikzstuff
 \usepackage{tikz,pgfplots}
@@ -33,11 +40,11 @@
 \usetikzlibrary{positioning}
 \usetikzlibrary{arrows.meta}
 \usepackage[european resistors,american voltages,american currents]{circuitikz}
-\ctikzset{bipoles/length=.8cm}%smaller circuit symbols
-\ctikzset{voltage/bump b=1.5}%more distance for the voltage arrow 
-\ctikzset{bipoles/vsourceam/inner plus={\tiny $+$}}%setting + a bit smaller
-\ctikzset{bipoles/vsourceam/inner minus={\tiny $-$}}%setting - a bit smaller
-\ctikzset{bipole voltage style/.style={color=blue}, bipole current style/.style={color=red}}%setting colors for I and V
+\ctikzset{bipoles/length=.8cm}                                                              % smaller circuit symbols
+\ctikzset{voltage/bump b=1.5}                                                               % more distance for the voltage arrow 
+\ctikzset{bipoles/vsourceam/inner plus={\tiny $+$}}                                         % setting + a bit smaller
+\ctikzset{bipoles/vsourceam/inner minus={\tiny $-$}}                                        % setting - a bit smaller
+\ctikzset{bipole voltage style/.style={color=blue}, bipole current style/.style={color=red}}% setting colors for I and V
 \newcommand{\iarr}[1]{% name
     \node [currarrow, color=red, anchor=center,
     rotate=\ctikzgetdirection{#1-Iarrow}] at (#1-Ipos) {}

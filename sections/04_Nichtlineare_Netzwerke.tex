@@ -12,22 +12,18 @@
     \end{center}
 \end{minipage}%
 \begin{minipage}[t]{{0.9\linewidth}}
-    Viele Netzwerke sind in der Praxis nicht linear.
+    Viele Netzwerke sind in der Praxis nicht linear, daher wird meistens ein nicht linearer Widerstand verwendet, um diesen Effekt zu modellieren.
 
-    Meistens wird dabei ein nicht linearen Widerstand verwendet, um diesen Effekt zu modellieren.
+    Das links stehende Schemasymbol wird dabei häufig verwendet.
 
-    Das links stehende Schemasymbol wird dabei verwendet.
-
-    Die Änderung des Widerstandswertes durch einen Effekt wie zum Beispiel Temperatur, licht oder mechanische Einwirkung herbeigeführt wird können Symbole diesen Effekt signalisieren. 
-    
-    Symbole wie z.B. Pfeile oder ein Temperatursymbol.
+    Die Änderung des Widerstandswertes, welche durch einen Effekt wie zum Beispiel Temperatur, 
+    Licht oder mechanische Einwirkung herbeigeführt werden, können mit Symbolen signalisiert werden, wie z.B. Pfeile oder ein Temperatursymbol.
 \end{minipage}
 
 \subsection{Leistungsanpassung}
 
-Leistungsanpassung beschreibt das Verfahren ein Widerstand an einer realen Quelle anzupassen, sodass die maximal mögliche Energie aus der Quelle fliesst. 
-Im Lineraren Fall entspricht der Lastwiderstand dem Innenwiderstand der Quelle. 
-
+Leistungsanpassung beschreibt das Verfahren, einen Widerstand an einer realen Quelle anzupassen, sodass die maximal mögliche Energie aus der Quelle fliesst. 
+Im linearen Fall entspricht der Lastwiderstand dem Innenwiderstand der Quelle. 
 
 \begin{minipage}[c]{0.49\linewidth}
     \input{circuits/Leistungsanpassung thevenin.tex}
@@ -37,7 +33,7 @@ Im Lineraren Fall entspricht der Lastwiderstand dem Innenwiderstand der Quelle.
             $R_l^\ast = R_i$
         \end{tcolorbox}
         maximale leistung, $\eta=50\%$\\
-        Der Stern am $R_l$ signalisiert, dass Leistungsanpassung gemacht wurde. 
+        Der Stern bei $R_l$ signalisiert, dass Leistungsanpassung gemacht wurde. 
     \end{center}
 \end{minipage}
 \hfill\vline\hfill
@@ -47,22 +43,24 @@ Im Lineraren Fall entspricht der Lastwiderstand dem Innenwiderstand der Quelle.
 
 \subsubsection{Herleitung des optimalen Lastwiderstands einer linearen Stromquelle}
 
-\begin{center}
-    \input{circuits/leistungsanpassung norton.tex}
-\end{center}
+\begin{minipage}{0.3\linewidth}
+    \begin{center}
+        \input{circuits/leistungsanpassung norton.tex}
+    \end{center}
+\end{minipage}
+\begin{minipage}{0.7\linewidth}
+    \begin{align*}
+        U_{R_l} & = \frac{R_i R_l }{R_i + R_l} \cdot I \\
+        P_{R_l} & = \frac{1}{R_l}(U_{R_l})^2\\
+        0 & = \frac{\diff P(R_l)}{\diff R_l} = R_l' (U_{R_l})^2 + 2\frac{1}{R_l}(U_{R_l'})\\
+        0 & = -\frac{1}{R_l^2}\frac{R_i^2 R_l^2 I^2}{(R_i + R_l)^2 } + 2\frac{1}{R_l} \frac{R_i R_l I}{R_i + R_l}\left(\frac{R_i I(R_i + R_L)- R_i R_lI}{(R_i + R_l)^2}\right)\\
+        0 & = 2 \frac{R_i^3 I^2}{(R_i + R_l)^3} - \frac{R_i^2  I^2}{(R_i + R_l)^2 }\\
+        \frac{R_i^2  I^2}{(R_i + R_l)^2 } & = 2 \frac{R_i^3 I^2}{(R_i + R_l)^3}\\
+        R_i^2 I^2 (R_i + R_l) & = 2 R_i^3 I^2\\
+        2R_i & = R_i + R_l\\
+        R_i &= R_l
+    \end{align*}
+\end{minipage}
 
-\begin{align*}
-    U_{RL} & = \frac{R_i R_l I}{R_i + R_l}\\
-    P_{R_l} & = \frac{1}{R_L}(U(R_l))^2\\
-    0 & = \frac{d P(R_l)}{d R_l}\\
-    0 & = R_l' (U(R_l))^2 + 2\frac{1}{R_L}(U(R_l)')\\
-    0 & = -\frac{1}{R_l^2}\frac{R_i^2 R_l^2 I^2}{(R_i + R_l)^2 } + 2\frac{1}{R_l} \frac{R_i R_l I}{R_i + R_l}\left(\frac{R_i I(R_i + R_L)- R_i R_lI}{(R_i + R_l)^2}\right)\\
-    0 & = 2 \frac{R_i^3 I^2}{(R_i + R_l)^3} - \frac{R_i^2  I^2}{(R_i + R_l)^2 }\\
-    \frac{R_i^2  I^2}{(R_i + R_l)^2 } & = 2 \frac{R_i^3 I^2}{(R_i + R_l)^3}\\
-    R_i^2 I^2 (R_i + R_l) & = 2 R_i^3 I^2\\
-    2R_I & = R_i + R_l\\
-    R_i &= R_l
-\end{align*}
-
-Im falle eines nicht linearen Widerstands, muss eine Formel für die Leistung über dem Lastwiderstand gefunden werden. 
+Im Falle eines nicht linearen Widerstands muss eine Formel für die Leistung über dem Lastwiderstand gefunden werden. 
 Die gefundene Formel muss dann abgeleitet und null gesetzt werden, ähnlich wie in der Herleitung.
